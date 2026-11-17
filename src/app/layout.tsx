@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "MentorLagbe | Find Your Ideal Tutor or Mentorship Batch",
   description:
     "MentorLagbe connects students with qualified tutors for subject-wise tuition and 1-on-1 mentorship — online or offline, across Bangladesh and beyond.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 // Routes block on request-time data (live tuitions, sessions) —
