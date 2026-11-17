@@ -110,7 +110,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-brand-200/70 sm:flex-row sm:px-6">
-          <p>© {new Date().getFullYear()} MentorLagbe. All rights reserved.</p>
+          <p>© 2026 MentorLagbe. All rights reserved.</p>
           <p>Learn smarter. Teach wider.</p>
         </div>
       </div>

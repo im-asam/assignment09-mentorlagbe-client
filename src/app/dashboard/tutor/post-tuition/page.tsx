@@ -18,8 +18,8 @@ function PostTuitionContent() {
   const plan = ((session?.user as { plan?: Plan } | undefined)?.plan ?? "free") as Plan;
 
   const [title, setTitle] = useState("");
-  const [subject, setSubject] = useState(SUBJECTS[0]);
-  const [classLevel, setClassLevel] = useState(CLASS_LEVELS[0]);
+  const [subject, setSubject] = useState<string>(SUBJECTS[0]);
+  const [classLevel, setClassLevel] = useState<string>(CLASS_LEVELS[0]);
   const [mode, setMode] = useState<"Online" | "Offline">("Online");
   const [location, setLocation] = useState("");
   const [monthlyFee, setMonthlyFee] = useState("");
