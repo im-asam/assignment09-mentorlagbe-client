@@ -11,6 +11,7 @@ import {
   FlaskConical,
   Languages,
   Sigma,
+  Star,
   type LucideIcon,
 } from "lucide-react";
 import { getTuitions, type Tuition } from "@/lib/api";
@@ -49,6 +50,35 @@ const STEPS = [
   },
 ];
 
+/** Demo platform counters (spec Home §5: platform statistics). */
+const HERO_STATS = [
+  { value: "500+", label: "Verified tutors" },
+  { value: "2,400+", label: "Students learning" },
+  { value: "4.9/5", label: "Average rating" },
+];
+
+/** Demo feedback cards (spec Home §5: testimonials). */
+const TESTIMONIALS = [
+  {
+    quote:
+      "I found an HSC physics tutor in one evening. Two months later my mock scores jumped from 52 to 81.",
+    name: "Rahim Uddin",
+    role: "HSC Student, Chattogram",
+  },
+  {
+    quote:
+      "As a tutor, MentorLagbe gave me a real pipeline — applications come in with schedules attached. No more random DMs.",
+    name: "Nusrat Jahan",
+    role: "Math Tutor, Dhaka",
+  },
+  {
+    quote:
+      "The IELTS batch I joined was small, focused, and honest about the fee. I hit Band 7.5 on my first attempt.",
+    name: "Tanvir Ahmed",
+    role: "IELTS Candidate, Sylhet",
+  },
+];
+
 const PRO_POINTS = [
   "Unlimited tuition posts for tutors",
   "Verified badge on your profile & listings",
@@ -81,7 +111,6 @@ function Underlined({ children }: { children: string }) {
 
 export default function HomePage() {
   const [tuitions, setTuitions] = useState<Tuition[]>([]);
-  const [total, setTotal] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
 
@@ -89,10 +118,7 @@ export default function HomePage() {
     let alive = true;
     getTuitions({ limit: 6 })
       .then((page) => {
-        if (alive) {
-          setTuitions(page.tuitions ?? []);
-          setTotal(page.total ?? null);
-        }
+        if (alive) setTuitions(page.tuitions ?? []);
       })
       .catch(() => {
         if (alive) setFailed(true);
@@ -134,12 +160,16 @@ export default function HomePage() {
               Become a tutor
             </Link>
           </div>
-          {total !== null && !failed && total > 0 && (
-            <p className="mt-10 border-t border-line pt-6 text-sm text-secondary">
-              <span className="font-medium tabular-nums text-ink">{total}</span>{" "}
-              approved tuitions
-            </p>
-          )}
+          <div className="mt-10 flex flex-wrap gap-8 border-t border-line pt-6">
+            {HERO_STATS.map((s) => (
+              <div key={s.label}>
+                <p className="text-2xl font-medium tabular-nums text-ink">
+                  {s.value}
+                </p>
+                <p className="mt-1 text-sm text-muted">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -322,6 +352,53 @@ export default function HomePage() {
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      {/* ---------- Testimonials ---------- */}
+      <section>
+        <div className="text-center">
+          <p className="text-sm font-medium text-muted">Real stories</p>
+          <h2 className="mt-2 text-3xl font-medium text-ink">
+            Students &amp; tutors love MentorLagbe
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <figure
+              key={t.name}
+              className="flex flex-col rounded-2xl border border-line bg-card p-6 shadow-sm"
+            >
+              <span
+                className="flex gap-1 text-accent-ink"
+                aria-label="5 out of 5 stars"
+              >
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    strokeWidth={1.5}
+                    fill="currentColor"
+                    aria-hidden="true"
+                  />
+                ))}
+              </span>
+              <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-secondary">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-5 flex items-center gap-3 border-t border-line pt-4">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-raised text-sm font-medium text-ink">
+                  {t.name.slice(0, 1)}
+                </span>
+                <span>
+                  <span className="block text-sm font-medium text-ink">
+                    {t.name}
+                  </span>
+                  <span className="block text-xs text-muted">{t.role}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
