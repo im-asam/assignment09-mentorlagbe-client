@@ -62,7 +62,7 @@ export default function ImageUpload({
             type="button"
             onClick={() => fileRef.current?.click()}
             disabled={uploading}
-            className="rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition hover:bg-brand-700 disabled:opacity-60"
+            className="rounded-full bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-brand-700 disabled:opacity-60"
           >
             {uploading ? "Uploading…" : value ? "Change Image" : "Upload Image"}
           </button>

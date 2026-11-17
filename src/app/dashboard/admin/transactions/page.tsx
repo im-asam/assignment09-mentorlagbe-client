@@ -62,7 +62,7 @@ function AdminTransactionsContent() {
           </p>
         </div>
       ) : (
-        <div className="mt-6 overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+        <div className="mt-6 overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[720px] text-left text-sm">
               <thead>

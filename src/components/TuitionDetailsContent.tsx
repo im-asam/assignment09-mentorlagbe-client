@@ -117,7 +117,7 @@ export default function TuitionDetailsContent({ id }: { id: string }) {
       <div className="mt-4 grid gap-8 lg:grid-cols-3">
         {/* Main column */}
         <div className="lg:col-span-2">
-          <div className="overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+          <div className="overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
             <div className="relative aspect-[16/8] w-full bg-brand-50 dark:bg-brand-950">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={banner} alt={tuition.title} className="h-full w-full object-cover" />
@@ -174,10 +174,10 @@ export default function TuitionDetailsContent({ id }: { id: string }) {
 
         {/* Sidebar: tutor + apply */}
         <aside className="space-y-6">
-          <div className="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+          <div className="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
             <h2 className="font-display text-lg font-bold text-brand-950 dark:text-white">Your Tutor</h2>
             <div className="mt-4 flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-violet-500 text-lg font-bold text-white">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-lg font-bold text-white">
                 {tuition.tutorName?.slice(0, 1)?.toUpperCase() ?? "T"}
               </span>
               <div>
@@ -213,7 +213,7 @@ export default function TuitionDetailsContent({ id }: { id: string }) {
                 <button
                   type="button"
                   onClick={() => setShowApply(true)}
-                  className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md shadow-brand-600/25 transition hover:bg-brand-700"
+                  className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-brand-700"
                 >
                   Apply Now
                 </button>
@@ -243,7 +243,7 @@ export default function TuitionDetailsContent({ id }: { id: string }) {
           aria-label="Apply for tuition"
         >
           <div
-            className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-8 dark:bg-[#1b1a35]"
+            className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-8 dark:bg-[#1c1a18]"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="font-display text-xl font-bold text-brand-950 dark:text-white">

@@ -63,7 +63,7 @@ function AdminUsersContent() {
             onClick={() => setRoleFilter(f)}
             className={`rounded-full px-4 py-2 text-sm font-semibold capitalize transition ${
               roleFilter === f
-                ? "bg-brand-600 text-white shadow-md shadow-brand-600/20"
+                ? "bg-brand-600 text-white shadow-md"
                 : "border border-brand-200 text-brand-700 hover:bg-brand-50 dark:border-brand-800 dark:text-brand-300 dark:hover:bg-brand-900/50"
             }`}
           >
@@ -93,7 +93,7 @@ function AdminUsersContent() {
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Try a different role filter.</p>
         </div>
       ) : (
-        <div className="mt-6 overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+        <div className="mt-6 overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[640px] text-left text-sm">
               <thead>

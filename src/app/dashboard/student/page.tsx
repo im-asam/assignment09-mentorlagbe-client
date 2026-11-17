@@ -62,18 +62,17 @@ function StudentOverviewContent() {
       ) : (
         <>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <StatCard label="Total Applied" value={total} icon="✉" sub="All tuitions you applied to" />
-            <StatCard label="Accepted" value={accepted} icon="✅" sub="Tutors who said yes" />
-            <StatCard label="Pending" value={pending} icon="⏳" sub="Awaiting tutor response" />
+            <StatCard label="Total Applied" value={total} sub="All tuitions you applied to" />
+            <StatCard label="Accepted" value={accepted} sub="Tutors who said yes" />
+            <StatCard label="Pending" value={pending} sub="Awaiting tutor response" />
             <StatCard
               label="Current Plan"
               value={plan === "pro" ? "Pro" : "Free"}
-              icon="⭐"
               sub={plan === "pro" ? "Priority booking active" : "Upgrade for priority booking"}
             />
           </div>
 
-          <div className="mt-8 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+          <div className="mt-8 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
             <div className="flex items-center justify-between gap-3">
               <h2 className="font-display text-lg font-bold text-brand-950 dark:text-white">
                 Recent Applications

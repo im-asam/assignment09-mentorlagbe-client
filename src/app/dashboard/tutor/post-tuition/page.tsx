@@ -99,7 +99,7 @@ function PostTuitionContent() {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-6 space-y-5 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1b1a35]"
+        className="mt-6 space-y-5 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1c1a18]"
         noValidate
       >
         <div>
@@ -236,7 +236,7 @@ function PostTuitionContent() {
         <button
           type="submit"
           disabled={submitting || freeLimitReached}
-          className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md shadow-brand-600/25 transition hover:bg-brand-700 disabled:opacity-60"
+          className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-brand-700 disabled:opacity-60"
         >
           {submitting ? "Posting…" : freeLimitReached ? "Free Limit Reached — Upgrade to Post More" : "Post Tuition"}
         </button>

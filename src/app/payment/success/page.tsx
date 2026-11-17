@@ -47,7 +47,7 @@ function SuccessContent() {
           </p>
         </>
       ) : state === "done" ? (
-        <div className="rounded-[2rem] border border-emerald-100 bg-white p-8 shadow-lg dark:border-emerald-900 dark:bg-[#1b1a35]">
+        <div className="rounded-[2rem] border border-emerald-100 bg-white p-8 shadow-lg dark:border-emerald-900 dark:bg-[#1c1a18]">
           <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-3xl dark:bg-emerald-950">
             ✓
           </span>
@@ -76,7 +76,7 @@ function SuccessContent() {
           </div>
         </div>
       ) : (
-        <div className="rounded-[2rem] border border-amber-100 bg-white p-8 shadow-lg dark:border-amber-900 dark:bg-[#1b1a35]">
+        <div className="rounded-[2rem] border border-amber-100 bg-white p-8 shadow-lg dark:border-amber-900 dark:bg-[#1c1a18]">
           <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-3xl dark:bg-amber-950">
             !
           </span>

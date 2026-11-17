@@ -50,18 +50,16 @@ function AdminOverviewContent() {
       ) : (
         <>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <StatCard label="Total Users" value={stats.totalUsers} icon="👥" sub="Students, tutors & admins" />
-            <StatCard label="Total Tutors" value={stats.totalTutors} icon="👩‍🏫" sub="Registered tutor accounts" />
+            <StatCard label="Total Users" value={stats.totalUsers} sub="Students, tutors & admins" />
+            <StatCard label="Total Tutors" value={stats.totalTutors} sub="Registered tutor accounts" />
             <StatCard
               label="Tuitions"
               value={`${stats.pendingTuitions} pending`}
-              icon="▤"
               sub={`${stats.approvedTuitions} approved & live`}
             />
             <StatCard
               label="Total Stripe Revenue"
               value={`$${Number(stats.totalRevenue || 0).toLocaleString("en-US")}`}
-              icon="💳"
               sub={stats.totalTransactions != null ? `${stats.totalTransactions} Pro payments` : "All Pro subscriptions"}
             />
           </div>
@@ -90,7 +88,7 @@ function AdminOverviewContent() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-brand-900 dark:bg-[#1b1a35]"
+                className="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-brand-900 dark:bg-[#1c1a18]"
               >
                 <h2 className="font-display text-lg font-bold text-brand-950 dark:text-white">{card.title}</h2>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{card.text}</p>

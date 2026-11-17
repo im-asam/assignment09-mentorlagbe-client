@@ -22,7 +22,7 @@ export default function ErrorPage({
         <button
           type="button"
           onClick={reset}
-          className="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition hover:bg-brand-700"
+          className="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-brand-700"
         >
           Try Again
         </button>

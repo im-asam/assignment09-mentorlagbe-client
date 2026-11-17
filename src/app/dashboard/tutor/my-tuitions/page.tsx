@@ -84,7 +84,7 @@ function EditTuitionModal({
       aria-label="Edit tuition"
     >
       <div
-        className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-8 dark:bg-[#1b1a35]"
+        className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2rem] bg-white p-6 shadow-2xl sm:p-8 dark:bg-[#1c1a18]"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="font-display text-xl font-bold text-brand-950 dark:text-white">Edit Tuition</h2>
@@ -246,7 +246,7 @@ function MyTuitionsContent() {
         </div>
         <Link
           href="/dashboard/tutor/post-tuition"
-          className="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition hover:bg-brand-700"
+          className="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-brand-700"
         >
           ＋ Post New Tuition
         </Link>
@@ -287,7 +287,7 @@ function MyTuitionsContent() {
           {tuitions.map((t) => (
             <article
               key={t._id}
-              className="flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]"
+              className="flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]"
             >
               <div className="relative aspect-[16/7] w-full bg-brand-50 dark:bg-brand-950">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

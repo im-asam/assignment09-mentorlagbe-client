@@ -35,24 +35,24 @@ export default function ConfirmModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-brand-950/60 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
       onClick={onCancel}
       role="dialog"
       aria-modal="true"
       aria-label={title}
     >
       <div
-        className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl dark:bg-[#1b1a35]"
+        className="w-full max-w-sm rounded-2xl border border-line bg-card p-6 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <h3 className="font-display text-lg font-bold text-brand-950 dark:text-white">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{message}</p>
+        <h3 className="text-lg font-medium text-ink">{title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-secondary">{message}</p>
         <div className="mt-6 flex justify-end gap-2">
           <button
             type="button"
             onClick={onCancel}
             disabled={busy}
-            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-50 dark:border-brand-800 dark:text-slate-200 dark:hover:bg-brand-900/50"
+            className="rounded-lg border border-line-strong bg-card px-4 py-2 text-sm font-medium text-ink transition-colors ease-out-expo hover:bg-raised disabled:opacity-50"
           >
             {cancelLabel}
           </button>
@@ -60,7 +60,7 @@ export default function ConfirmModal({
             type="button"
             onClick={onConfirm}
             disabled={busy}
-            className="rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 disabled:opacity-50"
+            className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-colors ease-out-expo hover:bg-red-700 disabled:opacity-50"
           >
             {busy ? "Working…" : confirmLabel}
           </button>

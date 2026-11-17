@@ -110,7 +110,7 @@ export default function PricingPage() {
       </div>
 
       {/* Free plan strip */}
-      <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1b1a35]">
+      <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1c1a18]">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h2 className="font-display text-xl font-bold text-brand-950 dark:text-white">Free — $0 forever</h2>
@@ -134,8 +134,8 @@ export default function PricingPage() {
               key={p.id}
               className={`relative flex flex-col rounded-[2rem] border-2 p-8 shadow-sm ${
                 p.highlight
-                  ? "border-brand-600 bg-white dark:bg-[#1b1a35]"
-                  : "border-brand-100 bg-white dark:border-brand-900 dark:bg-[#1b1a35]"
+                  ? "border-brand-600 bg-white dark:bg-[#1c1a18]"
+                  : "border-brand-100 bg-white dark:border-brand-900 dark:bg-[#1c1a18]"
               }`}
             >
               {p.highlight && (
@@ -168,7 +168,7 @@ export default function PricingPage() {
                 disabled={busyPlan !== null}
                 className={`mt-8 w-full rounded-full py-3.5 text-sm font-bold transition disabled:opacity-60 ${
                   p.highlight
-                    ? "bg-brand-600 text-white shadow-md shadow-brand-600/25 hover:bg-brand-700"
+                    ? "bg-brand-600 text-white shadow-md hover:bg-brand-700"
                     : "border-2 border-brand-600 text-brand-700 hover:bg-brand-50 dark:text-brand-300 dark:hover:bg-brand-900/50"
                 }`}
               >

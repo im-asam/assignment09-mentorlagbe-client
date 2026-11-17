@@ -2,48 +2,175 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * MentorLagbe token system (unslop run, Nov 2026).
+ * Direction: paper, ink, and the classroom. Warm neutrals, one ember
+ * accent, hairline borders. Every value below is a deliberate choice;
+ * nothing here is a leftover of the old indigo/violet system.
+ */
+
+/* ---------- Theme-flipping semantic values ---------- */
+:root {
+  --surface-page: #f7f4ee;
+  --surface-card: #fdfbf7;
+  --surface-raised: #efe9df;
+  --surface-inverse: #1f1b16;
+  --text-primary: #1f1b16;
+  --text-secondary: #5e554a;
+  --text-muted: #7b7266;
+  --text-on-inverse: #efe9de;
+  --text-on-inverse-muted: rgba(239, 233, 222, 0.68);
+  --line: rgba(31, 27, 22, 0.08);
+  --line-strong: rgba(31, 27, 22, 0.16);
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
+  --on-accent: #ffffff;
+  --accent-ink: #c2410c;
+  --accent-soft: rgba(194, 65, 12, 0.08);
+}
+
+.dark {
+  --surface-page: #161513;
+  --surface-card: #1c1a18;
+  --surface-raised: #262421;
+  --surface-inverse: #1f1b16;
+  --text-primary: #efe9de;
+  --text-secondary: #aaa398;
+  --text-muted: #8a847a;
+  --text-on-inverse: #efe9de;
+  --text-on-inverse-muted: rgba(239, 233, 222, 0.68);
+  --line: rgba(239, 233, 222, 0.08);
+  --line-strong: rgba(239, 233, 222, 0.16);
+  --accent: #efe9de;
+  --accent-hover: #ffffff;
+  --on-accent: #1f1b16;
+  --accent-ink: #fb923c;
+  --accent-soft: rgba(251, 146, 60, 0.12);
+}
+
+@theme inline {
+  --color-page: var(--surface-page);
+  --color-card: var(--surface-card);
+  --color-raised: var(--surface-raised);
+  --color-inverse: var(--surface-inverse);
+  --color-ink: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-on-inverse: var(--text-on-inverse);
+  --color-on-inverse-muted: var(--text-on-inverse-muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+}
+
 @theme {
-  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 
-  /* Deep indigo/violet — MentorLagbe primary */
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
-  --color-brand-950: #1e1b4b;
+  /* One easing curve for the whole app. */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  /* The single load entrance: short fade and rise, hero only. */
+  --animate-rise: rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 
-  /* Warm amber accent */
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
+  /*
+   * brand-* remapped to the warm ramp + ember accent. The dashboards,
+   * auth and pricing pages still use these names; the values below make
+   * them resolve warmly without rewriting those pages.
+   * 50-300: warm paper neutrals (surfaces, borders).
+   * 400: light ember — dark-mode accent text (dark:text-brand-400).
+   * 500-700: ember — buttons, links, hover states (light mode).
+   * 800-950: warm near-blacks — headings, dark bands, dark surfaces.
+   */
+  --color-brand-50: #f7f4ee;
+  --color-brand-100: #ebe8e2;
+  --color-brand-200: #e2ddd4;
+  --color-brand-300: #d5cfc4;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #ea580c;
+  --color-brand-600: #c2410c;
+  --color-brand-700: #9a3412;
+  --color-brand-800: #3a352e;
+  --color-brand-900: #262421;
+  --color-brand-950: #1f1b16;
+
+  /* accent-* remapped to the ember family. */
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #ea580c;
+  --color-accent-600: #c2410c;
+
+  /*
+   * violet-* remapped to warm neutrals + ember, so no violet survives
+   * anywhere (role badges, class-level chips, old gradients).
+   */
+  --color-violet-50: #f7f4ee;
+  --color-violet-100: #efe9df;
+  --color-violet-300: #fdba74;
+  --color-violet-400: #fb923c;
+  --color-violet-500: #f97316;
+  --color-violet-600: #c2410c;
+  --color-violet-700: #9a3412;
+  --color-violet-950: #262421;
+
+  /*
+   * slate-* remapped to warm greys. 400 is mostly dark-mode secondary
+   * text, so it leans light enough to read on dark surfaces.
+   */
+  --color-slate-50: #f7f4ee;
+  --color-slate-100: #efe9df;
+  --color-slate-200: #e2ddd4;
+  --color-slate-300: #d5cfc4;
+  --color-slate-400: #9a9384;
+  --color-slate-500: #7b7266;
+  --color-slate-600: #5e554a;
+  --color-slate-700: #4a4238;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
 }
 
 body {
-  background-color: #f8f7ff;
-  color: #1e1b4b;
+  background-color: var(--surface-page);
+  color: var(--text-primary);
 }
 
-.dark body {
-  background-color: #0f0e1e;
-  color: #e0e7ff;
+::selection {
+  background-color: #c2410c;
+  color: #ffffff;
 }
 
-/* Thin elegant scrollbar for the dashboard sidebar */
+:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+
+/* Thin scrollbar for the dashboard sidebar */
 .slim-scroll::-webkit-scrollbar {
   width: 6px;
 }
 .slim-scroll::-webkit-scrollbar-thumb {
-  background: #c7d2fe;
+  background: #d5cfc4;
   border-radius: 9999px;
 }
 .dark .slim-scroll::-webkit-scrollbar-thumb {
-  background: #4338ca;
+  background: #3a352e;
 }

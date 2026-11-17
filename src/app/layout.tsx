@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const sora = Sora({
-  variable: "--font-sora",
+// Instrument Sans is the interface family; Instrument Serif is reserved
+// for the hero headline only.
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${inter.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -48,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           position="top-center"
           toastOptions={{
             style: { fontFamily: "inherit" },
-            success: { iconTheme: { primary: "#4f46e5", secondary: "#fff" } },
+            success: { iconTheme: { primary: "#c2410c", secondary: "#fff" } },
           }}
         />
         <Navbar />

@@ -76,7 +76,7 @@ function AdminTuitionsContent() {
             onClick={() => setFilter(f)}
             className={`rounded-full px-4 py-2 text-sm font-semibold capitalize transition ${
               filter === f
-                ? "bg-brand-600 text-white shadow-md shadow-brand-600/20"
+                ? "bg-brand-600 text-white shadow-md"
                 : "border border-brand-200 text-brand-700 hover:bg-brand-50 dark:border-brand-800 dark:text-brand-300 dark:hover:bg-brand-900/50"
             }`}
           >
@@ -116,7 +116,7 @@ function AdminTuitionsContent() {
           {visible.map((t) => (
             <article
               key={t._id}
-              className="grid gap-5 rounded-[2rem] border border-brand-100 bg-white p-5 shadow-sm sm:grid-cols-[200px_1fr] dark:border-brand-900 dark:bg-[#1b1a35]"
+              className="grid gap-5 rounded-[2rem] border border-brand-100 bg-white p-5 shadow-sm sm:grid-cols-[200px_1fr] dark:border-brand-900 dark:bg-[#1c1a18]"
             >
               <div className="overflow-hidden rounded-2xl bg-brand-50 dark:bg-brand-950">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

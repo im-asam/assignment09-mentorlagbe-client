@@ -59,7 +59,7 @@ function SignInForm() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] w-full max-w-md flex-col justify-center py-10">
-      <div className="rounded-[2rem] border border-brand-100 bg-white p-8 shadow-lg shadow-brand-600/5 dark:border-brand-900 dark:bg-[#1b1a35]">
+      <div className="rounded-[2rem] border border-brand-100 bg-white p-8 shadow-lg dark:border-brand-900 dark:bg-[#1c1a18]">
         <h1 className="font-display text-2xl font-extrabold tracking-tight text-brand-950 dark:text-white">
           Welcome back
         </h1>
@@ -101,7 +101,7 @@ function SignInForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md shadow-brand-600/25 transition hover:bg-brand-700 disabled:opacity-60"
+            className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-brand-700 disabled:opacity-60"
           >
             {submitting ? "Signing in…" : "Sign In"}
           </button>

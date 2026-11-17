@@ -87,7 +87,7 @@ function BrowseContent() {
       </div>
 
       {/* Search + filters */}
-      <div className="mt-8 rounded-3xl border border-brand-100 bg-white p-5 shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+      <div className="mt-8 rounded-3xl border border-brand-100 bg-white p-5 shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <input
             type="search"
@@ -203,7 +203,7 @@ function BrowseContent() {
                         aria-current={p === page ? "page" : undefined}
                         className={`h-10 w-10 rounded-full text-sm font-semibold transition ${
                           p === page
-                            ? "bg-brand-600 text-white shadow-md shadow-brand-600/25"
+                            ? "bg-brand-600 text-white shadow-md"
                             : "border border-brand-200 text-brand-700 hover:bg-brand-50 dark:border-brand-800 dark:text-brand-300 dark:hover:bg-brand-900/50"
                         }`}
                       >

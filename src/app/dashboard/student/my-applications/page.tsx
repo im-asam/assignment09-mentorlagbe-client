@@ -92,7 +92,7 @@ function MyApplicationsContent() {
           {apps.map((a) => (
             <article
               key={a._id}
-              className="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm sm:p-6 dark:border-brand-900 dark:bg-[#1b1a35]"
+              className="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm sm:p-6 dark:border-brand-900 dark:bg-[#1c1a18]"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">

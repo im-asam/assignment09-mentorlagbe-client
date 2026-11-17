@@ -61,13 +61,12 @@ function TutorOverviewContent() {
       ) : (
         <>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <StatCard label="Total Posted" value={tuitions.length} icon="▤" sub="All your tuition listings" />
-            <StatCard label="Active & Approved" value={activeApproved} icon="✅" sub="Live on Browse Tuitions" />
-            <StatCard label="Total Applicants" value={apps.length} icon="👥" sub={`${pendingApps} awaiting your decision`} />
+            <StatCard label="Total Posted" value={tuitions.length} sub="All your tuition listings" />
+            <StatCard label="Active & Approved" value={activeApproved} sub="Live on Browse Tuitions" />
+            <StatCard label="Total Applicants" value={apps.length} sub={`${pendingApps} awaiting your decision`} />
             <StatCard
               label="Current Plan"
               value={plan === "pro" ? "Pro" : "Free"}
-              icon="⭐"
               sub={plan === "pro" ? "Unlimited posts" : "Max 2 posts — upgrade for unlimited"}
             />
           </div>
@@ -87,7 +86,7 @@ function TutorOverviewContent() {
             </div>
           )}
 
-          <div className="mt-8 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+          <div className="mt-8 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
             <div className="flex items-center justify-between gap-3">
               <h2 className="font-display text-lg font-bold text-brand-950 dark:text-white">
                 Your Latest Listings

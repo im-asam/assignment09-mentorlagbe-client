@@ -81,7 +81,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
             // eslint-disable-next-line @next/next/no-img-element
             <img src={user.image} alt={user.name} className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-brand-100 dark:ring-brand-800" />
           ) : (
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-violet-500 text-sm font-bold text-white">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">
               {initials(user?.name ?? "U")}
             </span>
           )}
@@ -112,7 +112,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
                   title={collapsed ? item.label : undefined}
                   className={`flex items-center gap-3 rounded-2xl px-3.5 py-2.5 text-sm font-semibold transition ${
                     active
-                      ? "bg-brand-600 text-white shadow-md shadow-brand-600/25"
+                      ? "bg-brand-600 text-white shadow-md"
                       : "text-slate-600 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-brand-900/50 dark:hover:text-white"
                   } ${collapsed ? "justify-center px-2" : ""}`}
                 >
@@ -129,7 +129,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
               title={collapsed ? "Update Profile" : undefined}
               className={`flex items-center gap-3 rounded-2xl px-3.5 py-2.5 text-sm font-semibold transition ${
                 pathname === "/dashboard/profile"
-                  ? "bg-brand-600 text-white shadow-md shadow-brand-600/25"
+                  ? "bg-brand-600 text-white shadow-md"
                   : "text-slate-600 hover:bg-brand-50 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-brand-900/50 dark:hover:text-white"
               } ${collapsed ? "justify-center px-2" : ""}`}
             >
@@ -171,7 +171,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
     <div className="flex gap-6 pb-8">
       {/* Desktop sidebar */}
       <aside
-        className={`sticky top-24 hidden h-[calc(100vh-7rem)] shrink-0 overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm transition-all duration-200 lg:block dark:border-brand-900 dark:bg-[#1b1a35] ${
+        className={`sticky top-24 hidden h-[calc(100vh-7rem)] shrink-0 overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm transition-all duration-200 lg:block dark:border-brand-900 dark:bg-[#1c1a18] ${
           collapsed ? "w-20" : "w-72"
         }`}
       >
@@ -182,7 +182,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-brand-950/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-          <aside className="absolute left-0 top-0 h-full w-72 overflow-hidden bg-white shadow-2xl dark:bg-[#1b1a35]">
+          <aside className="absolute left-0 top-0 h-full w-72 overflow-hidden bg-white shadow-2xl dark:bg-[#1c1a18]">
             {sidebarContent}
           </aside>
         </div>
@@ -191,7 +191,7 @@ function DashboardShell({ children }: { children: ReactNode }) {
       {/* Content */}
       <div className="min-w-0 flex-1">
         {/* Top bar */}
-        <div className="mb-6 flex items-center gap-3 rounded-3xl border border-brand-100 bg-white px-4 py-3 shadow-sm dark:border-brand-900 dark:bg-[#1b1a35]">
+        <div className="mb-6 flex items-center gap-3 rounded-3xl border border-brand-100 bg-white px-4 py-3 shadow-sm dark:border-brand-900 dark:bg-[#1c1a18]">
           <button
             type="button"
             onClick={() => setCollapsed((v) => !v)}

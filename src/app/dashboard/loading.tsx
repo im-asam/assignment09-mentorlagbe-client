@@ -8,14 +8,14 @@ export default function DashboardLoading() {
         {Array.from({ length: 4 }).map((_, i) => (
           <div
             key={i}
-            className="h-32 rounded-3xl border border-brand-100 bg-white p-5 dark:border-brand-900 dark:bg-[#1b1a35]"
+            className="h-32 rounded-3xl border border-brand-100 bg-white p-5 dark:border-brand-900 dark:bg-[#1c1a18]"
           >
             <div className="h-4 w-24 rounded-full bg-brand-100 dark:bg-brand-900" />
             <div className="mt-4 h-8 w-16 rounded-full bg-brand-100 dark:bg-brand-900" />
           </div>
         ))}
       </div>
-      <div className="mt-8 h-64 rounded-[2rem] border border-brand-100 bg-white dark:border-brand-900 dark:bg-[#1b1a35]" />
+      <div className="mt-8 h-64 rounded-[2rem] border border-brand-100 bg-white dark:border-brand-900 dark:bg-[#1c1a18]" />
     </div>
   );
 }

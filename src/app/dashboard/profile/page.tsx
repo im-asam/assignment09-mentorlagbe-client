@@ -98,7 +98,7 @@ function ProfileContent() {
         Keep your info fresh — tutors see your name and bio on listings.
       </p>
 
-      <div className="mt-6 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1b1a35]">
+      <div className="mt-6 rounded-[2rem] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 dark:border-brand-900 dark:bg-[#1c1a18]">
         <div className="mb-6 flex flex-wrap items-center gap-2 text-xs font-semibold">
           <span className="rounded-full bg-brand-50 px-3 py-1.5 text-brand-700 dark:bg-brand-900/70 dark:text-brand-300">
             {email}
@@ -159,7 +159,7 @@ function ProfileContent() {
           <button
             type="submit"
             disabled={saving}
-            className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md shadow-brand-600/25 transition hover:bg-brand-700 disabled:opacity-60"
+            className="w-full rounded-full bg-brand-600 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-brand-700 disabled:opacity-60"
           >
             {saving ? "Saving…" : "Save Changes"}
           </button>
