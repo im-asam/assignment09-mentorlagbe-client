@@ -46,13 +46,13 @@ export const auth = betterAuth({
     },
   },
   session: {
-    // Signed JWT session data in a cookie: session validation becomes
-    // stateless and works from ANY serverless isolate (proxy, pages, API),
-    // without a database round-trip on every request.
-    cookieCache: {
-      enabled: true,
-      maxAge: 60 * 60 * 24 * 7, // 7 days — matches session lifetime
-    },
+    // No session cookie cache: get-session must read the user from the
+    // database every time. With the cache enabled, the session cookie
+    // kept serving the stale "free" plan for up to 7 days after the
+    // Stripe payment had already upgraded the plan in the DB — the
+    // dashboard only updated after sign-out + sign-in. Disabling it
+    // costs one DB read per session check, which this app can afford.
+    cookieCache: { enabled: false },
   },
   plugins: [
     // Issues JWTs (via authClient.token()) that the Express API verifies
