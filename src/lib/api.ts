@@ -6,8 +6,12 @@ import { authClient } from "./auth-client";
  * BetterAuth JWT (verified by the server via the JWKS endpoint).
  */
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000";
+// All Express API calls go through the Next.js rewrite proxy
+// (/api/server/* -> the Express server), so the browser only talks to
+// the client host. NEXT_PUBLIC_API_URL is intentionally not used: a
+// direct cross-origin call breaks whenever the route to the server
+// host is flaky, while the client host stays reachable.
+const API_URL = "/api/server";
 
 export type TuitionMode = "Online" | "Offline";
 export type ApprovalStatus = "pending" | "approved" | "rejected";
